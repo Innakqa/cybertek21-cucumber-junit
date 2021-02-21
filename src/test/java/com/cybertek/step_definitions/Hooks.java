@@ -18,6 +18,12 @@ public class Hooks {
         System.out.println("----- Connecting to DATABASE JavaDBConnectivity");
     }
 
+    @After(value = "@db", order = 1)
+    public void closeDBConnection() {
+        System.out.println("------Closing browser");
+        System.out.println("------Take a screenshot");
+    }
+
     @After(order = 2)
     public void tearDownScenario(Scenario scenario) {
 
@@ -31,7 +37,7 @@ public class Hooks {
         }
 
         BrowserUtils.wait(2); // just to see
-        Driver.getDriver().close();
+        Driver.closeDriver();
     }
 
 
