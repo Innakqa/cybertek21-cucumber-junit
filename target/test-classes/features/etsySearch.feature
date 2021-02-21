@@ -14,8 +14,13 @@ Feature: Etsy search feature
     And user searches for "wooden spoon" in the search box
     Then user should see "Wooden spoon" in the title
 
-    #Wooden Spoon - is parametrized
+    #Wooden Spoon - is parameterized
 
 
+  @etsy2
+  Scenario:Etsy Search Title Verification (without parameterization)
+    Given user is on the Etsy landing page
+    And user searches for wooden spoon in the search box
+    Then user should see Wooden spoon in the title
 
 

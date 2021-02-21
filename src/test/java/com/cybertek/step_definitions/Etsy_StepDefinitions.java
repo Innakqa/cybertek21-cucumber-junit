@@ -54,11 +54,16 @@ public class Etsy_StepDefinitions {
 
     @And("user searches for wooden spoon in the search box")
     public void userSearchesForWoodenSpoonInTheSearchBox() {
+        etsySearchPage.searchBox.sendKeys("wooden spoon"+Keys.ENTER);
     }
 
     @Then("user should see Wooden spoon in the title")
     public void userShouldSeeWoodenSpoonInTheTitle() {
+        String actual = Driver.getDriver().getTitle();
+        String expected = "Wooden spoon";
+
+        Assert.assertTrue(actual.contains(expected));
     }
 
-    
+
 }
