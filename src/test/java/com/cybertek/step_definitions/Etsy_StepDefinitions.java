@@ -51,4 +51,14 @@ public class Etsy_StepDefinitions {
 
 
     }
+
+    @And("user searches for wooden spoon in the search box")
+    public void userSearchesForWoodenSpoonInTheSearchBox() {
+    }
+
+    @Then("user should see Wooden spoon in the title")
+    public void userShouldSeeWoodenSpoonInTheTitle() {
+    }
+
+    
 }
