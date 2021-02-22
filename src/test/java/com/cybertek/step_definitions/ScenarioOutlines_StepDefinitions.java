@@ -1,13 +1,25 @@
 package com.cybertek.step_definitions;
 
+import com.cybertek.pages.SBear_OrderPage;
+import com.cybertek.pages.SmartBearLoginPage;
+import com.cybertek.utilities.ConfigurationReader;
+import com.cybertek.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class ScenarioOutlines_StepDefinitions {
 
+    SmartBearLoginPage smartBearLoginPage = new SmartBearLoginPage();
+    SBear_OrderPage sBearOrderPage = new SBear_OrderPage();
+
+
     @Given("User is logged into SmartBear Tester account and on Order page")
     public void user_is_logged_into_smart_bear_tester_account_and_on_order_page() {
+
+        Driver.getDriver().get(ConfigurationReader.getProperty("smartBearUrl"));
+        smartBearLoginPage.loginToSmartBear();
+        sBearOrderPage.orderLink.click();
 
     }
 
