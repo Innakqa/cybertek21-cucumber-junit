@@ -8,6 +8,7 @@ import com.cybertek.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
@@ -93,12 +94,15 @@ public class dataTables_StepDefinitions {
         Select monthDropdown = new Select(dropdownsPage.monthDropdown);
 
         List<WebElement> monthAsWebElement = monthDropdown.getOptions();
+//                          converting from List of WebElemtns to List of Strings
 
         List<String> monthsAsString = new ArrayList<>(); // just as a place holder
 
         for (WebElement each : monthAsWebElement) {
             monthsAsString.add(each.getText());
         }
+
+        Assert.assertTrue(expectedList.equals(monthsAsString));
 
 
     }
