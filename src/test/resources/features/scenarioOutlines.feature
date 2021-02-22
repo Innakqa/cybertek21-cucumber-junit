@@ -2,6 +2,7 @@ Feature: SmartBear order feature
 
   Scenario Outline: User ordering a product from Orders page
 
+    @scenarioOutline
     Given User is logged into SmartBear Tester account and on Order page
     When User fills out the form as followed from the table below:
     And User selects "<product>" from product dropdown
@@ -18,4 +19,5 @@ Feature: SmartBear order feature
     Then User verifies "<costumer name>" is in the list
 
     Examples:
-    |product|quantity|customer name|street|city|state|zip|cardType|expiration date|costumer name|
+      | product | quantity | customer name | street        | city   | state   | zip   | cardType | card number    | expiration date | costumer name |
+      | myMoney | 2        | jamal         | 122 london st | london | chelsea | 22150 | visa     | 1111 1111 1111 | 12 2025         | jamal         |
