@@ -1,5 +1,6 @@
 package com.cybertek.step_definitions;
 
+import com.cybertek.pages.DropdownsPage;
 import com.cybertek.pages.SmartBearLoginPage;
 import com.cybertek.utilities.BrowserUtils;
 import com.cybertek.utilities.ConfigurationReader;
@@ -7,13 +8,17 @@ import com.cybertek.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 public class dataTables_StepDefinitions {
 
     SmartBearLoginPage smartBearLoginPage = new SmartBearLoginPage();
+    DropdownsPage dropdownsPage = new DropdownsPage();
 
 
     @Then("User should see below words displayed")
@@ -47,6 +52,10 @@ public class dataTables_StepDefinitions {
     @When("User enters below info")
     public void user_enters_below_info(Map<String, String> loginInfo) {
 
+        //smartBearLoginPage.userEntersBelowInfo(); <==== if Iwant to implemets methods in page classes!
+        //all below would go there then!!!!
+
+
         /* Map LoginInfo
           username = Tester
           password = test
@@ -66,6 +75,8 @@ public class dataTables_StepDefinitions {
 
     }
 
+//---------------------------DropDown Practice / DataTable
+
 
     @Given("User is on the dropdowns page of practice tool")
     public void user_is_on_the_dropdowns_page_of_practice_tool() {
@@ -75,10 +86,19 @@ public class dataTables_StepDefinitions {
     }
 
 
-//---------------------------DropDown Practice / DataTable
-
     @Then("User should see below info in month dropdown")
     public void user_should_see_below_info_in_month_dropdown(List<String> expectedList) {
+
+
+        Select monthDropdown = new Select(dropdownsPage.monthDropdown);
+
+        List<WebElement> monthAsWebElement = monthDropdown.getOptions();
+
+        List<String> monthsAsString = new ArrayList<>(); // just as a place holder
+
+        for (WebElement each : monthAsWebElement) {
+            monthsAsString.add(each.getText());
+        }
 
 
     }
