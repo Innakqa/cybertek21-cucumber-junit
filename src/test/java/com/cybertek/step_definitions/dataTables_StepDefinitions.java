@@ -9,10 +9,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -90,11 +88,17 @@ public class dataTables_StepDefinitions {
     @Then("User should see below info in month dropdown")
     public void user_should_see_below_info_in_month_dropdown(List<String> expectedList) {
 
-
         Select monthDropdown = new Select(dropdownsPage.monthDropdown);
+        //Basically we`re comparing 2 lists of strings:
+        //expected: List<String> expectedList
+        //actual: (BrowserUtils.getElementText(monthDropdown.getOptions()) --> Returns List<String>
+
+        List<String> actualText = BrowserUtils.getElementText(monthDropdown.getOptions());
+        Assert.assertTrue(expectedList.equals(actualText));
+/* we created UtilityMethod for this
+ //                          converting from List of WebElemtns to List of Strings
 
         List<WebElement> monthAsWebElement = monthDropdown.getOptions();
-//                          converting from List of WebElemtns to List of Strings
 
         List<String> monthsAsString = new ArrayList<>(); // just as a place holder
 
@@ -102,8 +106,11 @@ public class dataTables_StepDefinitions {
             monthsAsString.add(each.getText());
         }
 
-        Assert.assertTrue(expectedList.equals(monthsAsString));
 
+        Assert.assertTrue(expectedList.equals(monthsAsString));
+        //assertion will check the size. If its not equal, it wont continue the assertion/fail the test
+        //if size is equal it will compare each element in the list
+*/
 
     }
 
