@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class SBear_OrderPage extends SBear_BasePage{
+    //when we extend to BasePage we`ll get the PageFactory.initElem......
 
     @FindBy(id="ctl00_MainContent_fmwOrder_ddlProduct")
     public WebElement productDropdown;
