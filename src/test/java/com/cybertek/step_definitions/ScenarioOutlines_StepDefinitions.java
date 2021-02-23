@@ -7,6 +7,7 @@ import com.cybertek.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.support.ui.Select;
 
 public class ScenarioOutlines_StepDefinitions {
 
@@ -31,6 +32,13 @@ public class ScenarioOutlines_StepDefinitions {
 
     @When("User selects {string} from product dropdown")
     public void user_selects_from_product_dropdown(String string) {
+
+        Select productDropdown = new Select(sBearOrderPage.productDropdown);
+
+       // productDropdown
+
+
+
 
     }
 

@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.Select;
 import java.util.List;
 import java.util.Map;
 
-public class dataTables_StepDefinitions {
+public class DataTables_StepDefinitions {
 
     SmartBearLoginPage smartBearLoginPage = new SmartBearLoginPage();
     DropdownsPage dropdownsPage = new DropdownsPage();

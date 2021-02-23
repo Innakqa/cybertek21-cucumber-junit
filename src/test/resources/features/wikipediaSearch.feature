@@ -7,7 +7,7 @@ Feature: Wikipedia search feature
     When user types "Steve Jobs" in the wiki search box
     And user clicks wiki search button
     Then user sees "Steve Jobs" is in the wiki title
-
+Scenario:
   @wiki
   Scenario: Wikipedia search header verification
     Given user is on Wikipedia home page
