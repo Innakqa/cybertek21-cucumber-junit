@@ -7,7 +7,7 @@ Feature: SmartBear order feature
     When User fills out the form as followed from the table below:
     And User selects "<product>" from product dropdown
     And User enters "<quantity>" to quantity
-    And User enters "<expected name>" to costumer name
+    And User enters "<expectedName>" to costumer name
     And User enters "<street>" to street
     And User enters "<city>" to city
     And User enters "<state>" to state
@@ -16,8 +16,8 @@ Feature: SmartBear order feature
     And User enters "<card number>" to card number
     And User enters "<expiration date>" to expiration date
     And User clicks process button
-    Then User verifies "<actual name>" is in the list
+    Then User verifies "<actualName>" is in the list
 
     Examples:
-      | product | quantity | expected name | street        | city   | state   | zip   | cardType | card number    | expiration date | actual name |
-      | myMoney | 2        | jamal         | 122 london st | london | chelsea | 22150 | visa     | 1111 1111 1111 | 12 2025         | jamal       |
+      | product | quantity | expectedName | street        | city   | state   | zip   | cardType | card number    | expiration date | actualName |
+      | MyMoney | 2        | jamal        | 122 london st | london | chelsea | 22150 | visa     | 1111 1111 1111 | 12 2025         | jamal      |
