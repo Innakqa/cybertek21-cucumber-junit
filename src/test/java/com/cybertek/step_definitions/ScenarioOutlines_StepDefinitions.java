@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.Select;
 
 public class ScenarioOutlines_StepDefinitions {
 
-    SmartBearLoginPage smartBearLoginPage = new SmartBearLoginPage();
+    SmartBearLoginPage smartBearLoginPage = new SmartBearLoginPage(); // to get the webElements from Page class
     SBear_OrderPage sBearOrderPage = new SBear_OrderPage();
 
 

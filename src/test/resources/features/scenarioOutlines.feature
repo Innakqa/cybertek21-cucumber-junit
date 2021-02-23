@@ -20,4 +20,4 @@ Feature: SmartBear order feature
 
     Examples:
       | product | quantity | expected name | street        | city   | state   | zip   | cardType | card number    | expiration date | actual name |
-      | myMoney | 2        | jamal         | 122 london st | london | chelsea | 22150 | visa     | 1111 1111 1111 | 12 2025         | jamal         |
+      | myMoney | 2        | jamal         | 122 london st | london | chelsea | 22150 | visa     | 1111 1111 1111 | 12 2025         | jamal       |
