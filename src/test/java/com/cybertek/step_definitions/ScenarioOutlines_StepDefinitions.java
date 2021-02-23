@@ -35,7 +35,7 @@ public class ScenarioOutlines_StepDefinitions {
     }
 
     @When("User selects {string} from product dropdown")
-    public void user_selects_from_product_dropdown(String string) {
+    public void user_selects_from_product_dropdown(String string) { //string = data from .feature file
 
         Select productDropdown = new Select(sBearOrderPage.productDropdown);
 
