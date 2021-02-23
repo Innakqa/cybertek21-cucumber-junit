@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         plugin = {
                 "html:target/dataTables-report.html", //plugins-to generate reports
                 "json:target/cucumber.json",
-                "rerun:target/rerun.txt"         //failed tests scenarios only in file // to run: use 'another' runner class
+                "rerun:target/rerun.txt"         //failed tests // in .txt file // to run: use 'another' runner class
         },
         features = "src/test/resources/features",
         glue = "com/cybertek/step_definitions",
@@ -22,9 +22,6 @@ import org.junit.runner.RunWith;
         // in tags: Or/ And/ And Not
 )
 
-//public class FailedTestRunner {
-//
-//}
 
 public class CukesRunner {
 }
@@ -36,6 +33,3 @@ public class CukesRunner {
 
 
 
-//JSON stands for JavaScript Object Notation. It is used to transfer data between a server and a client on the web.
-// JSON Wire Protocol is a REST API that transfers the information between HTTP server.
-// Each BrowserDriver (such as FirefoxDriver, ChromeDriver, etc.) has its own HTTP server
