@@ -69,7 +69,7 @@ public class Driver {
     public static void closeDriver() {
         if (driver != null) {
             driver.quit(); //terminate here completely
-            driver = null; //thats why this line is needed again
+            driver = null; //that`s why this line is needed again
         }
     }
 
