@@ -11,6 +11,64 @@ import java.util.concurrent.TimeUnit;
 public class Driver {
 
 
+    private Driver() {
+    }
+
+    private static ThreadLocal<WebDriver> driverPool = new ThreadLocal<>();
+
+    public static WebDriver getDriver() {
+
+        if (driverPool.get() == null) {
+
+            String browser = ConfigurationReader.getProperty("browser");
+
+            switch (browser) {
+                case "chrome":
+                    WebDriverManager.chromedriver().setup();
+                    driverPool.set(new ChromeDriver());
+                    driverPool.get().manage().window().maximize();
+                    driverPool.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    break;
+
+                case "firefox":
+                    WebDriverManager.firefoxdriver().setup();
+                    driverPool.set(new FirefoxDriver());
+                    driverPool.get().manage().window().maximize();
+                    driverPool.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    break;
+
+                case "opera":
+                    WebDriverManager.operadriver().setup();
+                    driverPool.set(new OperaDriver());
+                    driverPool.get().manage().window().maximize();
+                    driverPool.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    break;
+
+                default:
+                    WebDriverManager.chromedriver().setup();
+                    driverPool.set(new ChromeDriver());
+                    driverPool.get().manage().window().maximize();
+                    driverPool.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    break;
+
+            }
+        }
+
+        return driver;
+    }
+
+    public static void closeDriver() {
+        if (driver != null) {
+            driver.quit();
+            driver = null;
+        }
+    }
+
+
+
+
+    /*
+
     //SINGLETON DESIGN PATTERN:
     //    #1- We create private constructor.
     private Driver() {
@@ -73,7 +131,5 @@ public class Driver {
         }
     }
 
-
-
-
+     */
 }
