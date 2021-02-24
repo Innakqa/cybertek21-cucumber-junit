@@ -21,9 +21,9 @@ Feature: SmartBear order feature
     Examples:
       | product | quantity | expectedName | street        | city   | state   | zip   | cardType | card number  | expiration date | actualName   |
       | MyMoney | 2        | jamal        | 122 london st | london | chelsea | 22150 | visa     | 111111111111 | 12/25           | jamal        |
-      | MyMoney | 2        | umar         | 122 london st | london | chelsea | 22150 | visa     | 111111111111 | 12/25           | umar11       |
+      | MyMoney | 2        | umar         | 122 london st | london | chelsea | 22150 | visa     | 111111111111 | 12/25           | umar         |
       | MyMoney | 2        | livio        | 122 london st | london | chelsea | 22150 | visa     | 111111111111 | 12/25           | livio        |
-      | MyMoney | 2        | julia        | 122 london st | london | chelsea | 22150 | visa     | 111111111111 | 12/25           | julia11      |
+      | MyMoney | 2        | julia        | 122 london st | london | chelsea | 22150 | visa     | 111111111111 | 12/25           | julia        |
       | MyMoney | 2        | anna         | 122 london st | london | chelsea | 22150 | visa     | 111111111111 | 12/25           | anna         |
       | MyMoney | 2        | ruslan       | 122 london st | london | chelsea | 22150 | visa     | 111111111111 | 12/25           | ruslan       |
       | MyMoney | 2        | kate         | 122 london st | london | chelsea | 22150 | visa     | 111111111111 | 12/25           | kate         |
