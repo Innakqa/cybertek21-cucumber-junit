@@ -2,7 +2,7 @@ package com.cybertek.tests;
 
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.junit.Test;
+import org.junit.Test; //!!!
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -14,7 +14,7 @@ public class ExcelRead {
     @Test
     public void excel_read_test() throws IOException {
 
-        String path = "SampleData.xlsx";
+        String path = "SampleData.xlsx"; //right click, Copy Path from Content Root
 
         //To be able to read from excel file we need to load the file
         FileInputStream fileInputStream = new FileInputStream(path);
