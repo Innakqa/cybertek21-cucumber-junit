@@ -7,6 +7,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.Test;
 
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class ExcelWrites {
@@ -42,9 +43,18 @@ public class ExcelWrites {
         System.out.println("Before = " + adamsCell);
 
 
+//to change a value of existing cell
+        adamsCell.setCellValue("Madam"); //passed
 
+        //Load the filel to outputStream
+        FileOutputStream fileOutputStream = new FileOutputStream(path); //to conclude this
+        //Write to the file using workbook object
+        workbook.write(fileOutputStream);
+
+        fileInputStream.close();
+        fileOutputStream.close();
+        workbook.close(); //if we dont close it, Garbage will close/collect later
 
     }
-
 
 }
