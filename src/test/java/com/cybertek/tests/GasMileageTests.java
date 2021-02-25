@@ -126,26 +126,37 @@ public class GasMileageTests {
         //=================================================================
 
         //Passing ACTUAL value into the Excel sheet
-        if (currentRow.getCell(5)==null) {
-            currentRow.createCell(5);
+        if (currentRow.getCell(6)==null) {
+            currentRow.createCell(6);
         }
 
         currentRow.getCell(5).setCellValue(actual);
 
         //=================================================================
+        //Passing the result into the excel file
 
-
-
-
-
+        if (currentRow.getCell(6)==null){
+            currentRow.createCell(6);
+        }
 
 
         if (actual.equals(formattedExpected)) {
-            System.out.println("PASS!");
+           // System.out.println("PASS!");
+            currentRow.getCell(6).setCellValue("Pass!");
         } else {
-            System.out.println("FAIL!!!");
+            //System.out.println("FAIL!!!");
+            currentRow.getCell(6).setCellValue("FAIL!!");
         }
+        //=================================================================
 
+        //We must write into excel file using .write method, otherwise changes will not be applied
+
+        fileOutputStream = new FileOutputStream(path);
+        workbook.write(fileOutputStream);
+
+        workbook.close();
+        fileInputStream.close();
+        fileOutputStream.close();
 
 
 
