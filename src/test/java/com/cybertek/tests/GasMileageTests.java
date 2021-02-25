@@ -11,6 +11,8 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.DecimalFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class GasMileageTests {
 
@@ -126,19 +128,21 @@ public class GasMileageTests {
         //=================================================================
 
         //Passing ACTUAL value into the Excel sheet
-        if (currentRow.getCell(6)==null) {
-            currentRow.createCell(6);
+        if (currentRow.getCell(5)==null) {
+            currentRow.createCell(5);
         }
 
         currentRow.getCell(5).setCellValue(actual);
 
         //=================================================================
-        //Passing the result into the excel file
+        //Passing the status into the excel file
 
-        if (currentRow.getCell(6)==null){
+        if (currentRow.getCell(6)==null){ //create first before passing the value
             currentRow.createCell(6);
         }
 
+        //=================================================================
+        //Comparing actual vs expected & passing the result into the Excel sheet
 
         if (actual.equals(formattedExpected)) {
            // System.out.println("PASS!");
@@ -147,6 +151,16 @@ public class GasMileageTests {
             //System.out.println("FAIL!!!");
             currentRow.getCell(6).setCellValue("FAIL!!");
         }
+        //=================================================================
+        //Entering the current time test is running that specific line
+        if(currentRow.getCell(7) == null){
+            currentRow.createCell(7);
+        }
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("hh:mm:ss a");
+        currentRow.getCell(7).setCellValue(LocalDateTime.now().format(dtf));
+
+
         //=================================================================
 
         //We must write into excel file using .write method, otherwise changes will not be applied
