@@ -47,9 +47,9 @@ public class ExcelRead {
 
         //TODO: 1-Create a logic to print out NEENA`s name dynamically
 
-        for (int rowNum = 0; rowNum < usedRows; rowNum++) {
+        for (int rowNum =0; rowNum < usedRows; rowNum++) {
 
-//            XSSFCell currentCell - sheet.getRow(rowNum).getCell(0);
+//            XSSFCell currentCell = sheet.getRow(rowNum).getCell(0);
 //            if (currentCell.toString().equals("Neena")){
 //                System.out.println("currentCell = " + currentCell);
 //            }
@@ -61,12 +61,15 @@ public class ExcelRead {
 //                System.out.println("Current Cell = "+name);
 //            }
 
+            //    sheet.getRow(4).getCell(0)
+            //               dynamic: rowNum    static: 0
+            //           cell                                           String
             if (sheet.getRow(rowNum).getCell(0).toString().equals("Neena")) {
                 System.out.println(" CurrentCell = " + sheet.getRow(rowNum).getCell(0));
             }
         }
 
-        // TODO: 2- Create a logic to print out Adam Sandler
+        // TODO: 2- Create a logic to print out Adam Sandler last name dynamically
 
         for (int rowNum = 0; rowNum < usedRows; rowNum++) {
             if (sheet.getRow(rowNum).getCell(1).toString().equals("Sandler")) {
