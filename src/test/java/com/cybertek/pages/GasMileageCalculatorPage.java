@@ -17,7 +17,7 @@ public class GasMileageCalculatorPage { //https://www.calculator.net/gas-mileage
     public WebElement inputCurrentOdometer;
 
     @FindBy(id = "uspodreading")
-    public WebElement inputPresentOdometer;
+    public WebElement inputPreviousOdometer;
 
     @FindBy(id = "usgasputin")
     public WebElement inputGas;
