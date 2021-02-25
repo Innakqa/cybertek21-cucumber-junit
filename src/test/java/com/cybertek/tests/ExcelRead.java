@@ -47,7 +47,7 @@ public class ExcelRead {
 
         //TODO: 1-Create a logic to print out NEENA`s name dynamically
 
-        for (int rowNum =0; rowNum < usedRows; rowNum++) {
+        for (int rowNum = 0; rowNum < usedRows; rowNum++) {
 
 //            XSSFCell currentCell = sheet.getRow(rowNum).getCell(0);
 //            if (currentCell.toString().equals("Neena")){
@@ -65,7 +65,7 @@ public class ExcelRead {
             //               dynamic: rowNum    static: 0
             //           cell                                           String
             if (sheet.getRow(rowNum).getCell(0).toString().equals("Neena")) {
-                System.out.println(" CurrentCell = " + sheet.getRow(rowNum).getCell(0));
+                System.out.println("CurrentCell = " + sheet.getRow(rowNum).getCell(0));
             }
         }
 
