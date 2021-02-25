@@ -21,13 +21,13 @@ public class ExcelRead {
 
         //workbook > sheet > row > cell
 
-        //We created workbook instance and loaded with "SampleData" file
+        //We created 'workbook instance and loaded with "SampleData" file
         XSSFWorkbook workbook = new XSSFWorkbook(fileInputStream);
 
-        //Create the sheet and pass the name of the sheet we want to work on
+        //Create the 'sheet and pass the name of the sheet we want to work on
         XSSFSheet sheet = workbook.getSheet("Employees");
 
-        //row > sheet
+        //row > sheet                                                                     //start w/0
         System.out.println(sheet.getRow(1).getCell(0));
 
         //Print out "Singer" from Excel sheet
