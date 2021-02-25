@@ -112,11 +112,42 @@ public class GasMileageTests {
 
         System.out.println("formattedExpected = " + formattedExpected);
 
+        //=================================================================
+        //PASSING EXPECTED VALUE INTO EXCEL SHEET
+
+        //If the cell is empty, we need to create the cell before being able to pass any data input into it
+        if (currentRow.getCell(4)==null) {
+            currentRow.createCell(4);
+        }
+
+        //Passing the 'formattedExpected' into our Excel sheet "Expected" cell
+        currentRow.getCell(4).setCellValue(formattedExpected);
+
+        //=================================================================
+
+        //Passing ACTUAL value into the Excel sheet
+        if (currentRow.getCell(5)==null) {
+            currentRow.createCell(5);
+        }
+
+        currentRow.getCell(5).setCellValue(actual);
+
+        //=================================================================
+
+
+
+
+
+
+
         if (actual.equals(formattedExpected)) {
             System.out.println("PASS!");
         } else {
             System.out.println("FAIL!!!");
         }
+
+
+
 
 
     }
