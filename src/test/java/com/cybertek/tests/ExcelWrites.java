@@ -40,13 +40,48 @@ public class ExcelWrites {
 
         //ex: Storing Adams cell if we were to be reusing it
         XSSFCell adamsCell = sheet.getRow(2).getCell(0);
-        System.out.println("Before = " + adamsCell);
 
+        System.out.println("Before = " + adamsCell);
 
 //to change a value of existing cell
         adamsCell.setCellValue("Madam"); //passed
 
-        //Load the filel to outputStream
+        System.out.println("After = "+adamsCell);
+
+        //=======================================================================================================
+
+        //TODO: Change Stevens name to Tom
+
+        //static wau of the solution:   (create a cell and pass it into that cell)
+//        XSSFCell stevensCell = sheet.getRow(1).getCell(0);
+//
+//        stevensCell.setCellValue("Tom");
+//        System.out.println("stevensCell = " + stevensCell);
+
+
+        //dynamic way: make rows dynamic but cell will be the same
+
+        for (int rowNum = 0; rowNum < sheet.getPhysicalNumberOfRows(); rowNum++) {
+
+            if (sheet.getRow(rowNum).getCell(0).toString().equals("Steven")){
+
+                sheet.getRow(rowNum).getCell(0).setCellValue("Tom");
+            }
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+        //=================================================== stays in the end =========================================
+        //Load the file to outputStream
         FileOutputStream fileOutputStream = new FileOutputStream(path); //to conclude this
         //Write to the file using workbook object
         workbook.write(fileOutputStream);
